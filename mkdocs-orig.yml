@@ -1,0 +1,144 @@
+site_name: Ansh Sachdeva
+site_description: Google certified Associate Android Developer
+site_author: Ansh Sachdeva(root-ansh)
+site_url: https://root-ansh.github.io/notes/
+
+repo_url: 'https://github.com/root-ansh/root-ansh.github.io'
+
+
+
+theme:
+    name: material
+    palette:
+        primary: 'white'
+        accent: 'green'
+
+    features:
+        - navigation.tabs
+
+    language: 'en'
+    extra:
+        search:
+            language:
+                - 'en'
+            seperator: '[\s\-\.]+'
+
+    logo: assets/logo/logo.svg
+    favicon: 'assets/images/favicon.ico'
+
+
+
+markdown_extensions:
+    - def_list
+    - meta
+    - markdown.extensions.admonition
+    - pymdownx.superfences
+    - pymdownx.emoji
+
+extra:
+    disqus: root-ansh
+    social:
+        - icon: fontawesome/brands/github
+          link: https://github.com/root-ansh
+
+        - icon: fontawesome/brands/twitter
+          link: https://twitter.com/root_ansh
+        - icon: fontawesome/brands/linkedin
+          link: https://www.linkedin.com/in/anshsachdevawork/
+
+
+
+copyright: Copyright &copy; 2024 <a href="https://www.linkedin.com/in/anshsachdevaprofessional/">Ansh Sachdeva</a>
+
+
+nav:
+    - About Me:
+        - About: index.md
+    - Education Details:
+        - Education Details: tab_edu/edu_details.md
+
+    - Work Experience:
+        - Work Experience: tab_work_exp/work_exp.md
+
+    - Portfolio:
+        - Portfolio: tab_projects/project_summary.md
+
+    - Blogs:
+        - About : tab_blogs/bloglist.md
+
+    - Notes:
+        - Introduction : tab_notes/blog_summary.md
+
+        - Tech:
+            - Setup a new laptop: tab_notes/misc/SetupANewLap.md
+            - Mkdocs: tab_notes/web/mkdocs/basic_syntax.md
+            - reddit⏏: https://www.reddit.com/r/curioustools/
+
+
+        - Android :
+            - Design Patterns : tab_notes/android/basics/pia_intro.md
+
+            - Basics:
+                - Android Fundamentals ⏏ : https://github.com/root-ansh/blog_android_lifecycles
+
+
+            - MobileAds:
+                - tab_notes/android/mobile_ads_1.md
+
+            - Firebase:
+                - Realtime DB: tab_notes/firebase/RealtimeDb.md
+
+            - Networking:
+                - GetPost:
+                    - 1, basics: tab_notes/android/networking/networking_get_post_basics.md
+                    - 2, The native way: tab_notes/android/networking/networking_get_post_native.md
+                    - 2, The native way 2023: tab_notes/android/networking/networking_get_post_native_2023.md
+                    - 3, Volley: tab_notes/android/networking/networking_get_post_volley.md
+                    - 4, OkHttp: tab_notes/android/networking/networking_get_post_okhttp.md
+                    - 4.1, GSON: tab_notes/android/networking/networking_get_post_gson.md
+                    - 4.2, Parsers revisited ⏏: https://github.com/root-ansh/blog_android_network_parsers
+                    - 5, Retrofit:  tab_notes/android/networking/networking_get_post_retrofit.md
+
+                - Image Downloading: tab_notes/android/networking/image_load_overview.md
+
+
+                - Shimmer and progress(inc)⏏:  https://codinginfinite.com/facebook-shimmer-effect-android-example/
+
+            - UI:
+                - RecyclerView :
+                    - A Quick RecylerView Adapter : tab_notes/android/ui_recycler/quick_recycler.md
+                    - A Selectable Items Adapter : tab_notes/android/ui_recycler/selectable_tags_adp.md
+                - VideoPlayer: tab_notes/android/exoplayer_p1.md
+                - Miscellaneous Ui Notes : ab_notes/android/ui_recycler/misc_notes.md
+
+            - ZZZ_Misc:
+                -  Fasting Up Android Studio: tab_notes/android/android_studio_settings.md
+                - tab_notes/android/enums_and_intDefs.md
+                - Debugging basics: tab_notes/misc/debugging_basics.md
+
+
+        - Kotlin:
+            - Intro : tab_notes/kotlin/intro.md
+            - Hello Kotlin⏏: https://docs.google.com/document/d/11-pLCn_f7aYuah22_XoBvGs_T3BHyh36vrq-3sCplWU/edit?usp=sharing
+            - Installing Kotlin⏏ : https://docs.google.com/document/d/1EQL9BGWNtX6u3EU4ETkfMVjlDqyurRU-4lBU-Z9WOzE/edit?usp=sharing
+            - Basic Syntax ⏏ : https://docs.google.com/document/d/1ZKZcyGYruaPIRJzqqN1jmN-aZmXUM5VJ_bh91amOmGM/edit?usp=sharing
+            - OOPS ⏏ : https://drive.google.com/file/d/1uwJAMBusJ6IRo6M1g_n3ggRLbNj2dLtL/view?usp=sharing
+            - OOPS Continued ⏏ : https://drive.google.com/file/d/1VhV0ZD2qeZSEZzd3qp1_0ZO5AH9lu8XA/view?usp=sharing
+            - Scopes and nullability ⏏ : https://drive.google.com/file/d/11SgtbswHAwc9N82GQ1ET1Pazh11WD5hf/view?usp=sharing
+
+        - Git:
+            - Introduction(inc): tab_notes/git/intro.md
+            - Git AutoPush On Commit : tab_notes/git/autopush.md
+
+
+        - Google Assistant and AI :
+            - Introduction(inc): tab_notes/assistant/404.md
+
+        - BlockChain:
+            - Public and Private Keys: tab_notes/blockchain/public_and_private_key.md
+
+
+    - Misc:
+          - Travel: tab_travel/summary.md
+
+
