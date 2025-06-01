@@ -20,8 +20,6 @@ Sometime ago ,I received [Google certification as an Associate Android Developer
 
 Once again, Welcome to my website, feel free to explore my Professional Career Summary!
 
-(https://root-ansh.github.io/tab_projects/project_summary/) 
-
 
 ## Contact details
 
