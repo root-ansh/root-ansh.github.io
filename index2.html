@@ -52,6 +52,29 @@
     ::-webkit-scrollbar-thumb:hover {
         background: #94a3b8;
     }
+    .marquee-mask {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .marquee-track {
+        width: max-content;
+        animation: marquee-scroll 72s linear infinite;
+    }
+
+    @keyframes marquee-scroll {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(-50%);
+        }
+    }
+
+    /* pause on hover */
+    .group:hover .marquee-track {
+        animation-play-state: paused;
+    }
     </style>
 </head>
 <body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-body transition-colors duration-300 antialiased selection:bg-primary selection:text-white">
@@ -124,16 +147,139 @@
             </div>
         </div>
         <div class="mt-20 border-t border-slate-200 dark:border-slate-800 pt-8">
-            <p class="text-center text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-6">Expertise In</p>
-            <div class="flex flex-wrap justify-center gap-8 md:gap-12 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
-                <div class="flex items-center gap-2"><i class="fab fa-android text-2xl text-green-500"></i> <span class="font-medium">Android</span></div>
-                <div class="flex items-center gap-2"><i class="fas fa-cube text-2xl text-blue-500"></i> <span class="font-medium">Kotlin</span></div>
-                <div class="flex items-center gap-2"><i class="fas fa-layer-group text-2xl text-green-400"></i> <span class="font-medium">Jetpack Compose</span></div>
-                <div class="flex items-center gap-2"><i class="fab fa-react text-2xl text-blue-400"></i> <span class="font-medium">React Native</span></div>
-                <div class="flex items-center gap-2"><i class="fab fa-python text-2xl text-yellow-500"></i> <span class="font-medium">Python</span></div>
-                <div class="flex items-center gap-2"><i class="fab fa-aws text-2xl text-orange-500"></i> <span class="font-medium">AWS</span></div>
+            <p class="text-center text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-6">
+                Expertise In
+            </p>
+
+            <div class="relative overflow-hidden">
+                <div class="marquee-mask group">
+                    <div class="marquee-track flex items-center gap-12 opacity-70 grayscale group-hover:grayscale-0 transition-all duration-500">
+
+                        <!-- ===== SET A ===== -->
+                        <div class="flex items-center gap-2">
+                            <i class="fab fa-android text-2xl text-green-500"></i>
+                            <span class="font-medium">Android</span>
+                        </div>
+
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-cube text-2xl text-blue-500"></i>
+                            <span class="font-medium">Kotlin</span>
+                        </div>
+
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-layer-group text-2xl text-green-400"></i>
+                            <span class="font-medium">Jetpack Compose</span>
+                        </div>
+
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-project-diagram text-2xl text-indigo-400"></i>
+                            <span class="font-medium">MVVM / MVI</span>
+                        </div>
+
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-random text-2xl text-purple-400"></i>
+                            <span class="font-medium">Coroutines</span>
+                        </div>
+
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-video text-2xl text-slate-400"></i>
+                            <span class="font-medium">ExoPlayer</span>
+                        </div>
+
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-camera text-2xl text-emerald-400"></i>
+                            <span class="font-medium">CameraX</span>
+                        </div>
+
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-code-branch text-2xl text-pink-400"></i>
+                            <span class="font-medium">KMP</span>
+                        </div>
+
+                        <div class="flex items-center gap-2">
+                            <i class="fab fa-apple text-2xl text-slate-500"></i>
+                            <span class="font-medium">SwiftUI</span>
+                        </div>
+
+                        <div class="flex items-center gap-2">
+                            <i class="fab fa-node-js text-2xl text-green-600"></i>
+                            <span class="font-medium">Node.js</span>
+                        </div>
+
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-plug text-2xl text-teal-400"></i>
+                            <span class="font-medium">Ktor</span>
+                        </div>
+
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-exchange-alt text-2xl text-blue-400"></i>
+                            <span class="font-medium">REST APIs</span>
+                        </div>
+
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-database text-2xl text-indigo-500"></i>
+                            <span class="font-medium">PostgreSQL</span>
+                        </div>
+
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-fire text-2xl text-orange-500"></i>
+                            <span class="font-medium">Firebase</span>
+                        </div>
+
+                        <div class="flex items-center gap-2">
+                            <i class="fab fa-aws text-2xl text-orange-400"></i>
+                            <span class="font-medium">AWS</span>
+                        </div>
+
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-tools text-2xl text-slate-500"></i>
+                            <span class="font-medium">CI / CD</span>
+                        </div>
+
+                        <div class="flex items-center gap-2">
+                            <i class="fab fa-github text-2xl text-slate-600"></i>
+                            <span class="font-medium">GitHub</span>
+                        </div>
+
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-cogs text-2xl text-slate-400"></i>
+                            <span class="font-medium">Gradle</span>
+                        </div>
+
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-laptop-code text-2xl text-blue-500"></i>
+                            <span class="font-medium">Android Studio</span>
+                        </div>
+
+                        <!-- ===== SET B (DUPLICATE FOR SEAMLESS LOOP) ===== -->
+                        <!-- (Exact same items again, unchanged) -->
+
+                        <!-- copy-paste Set A again below -->
+                        <div class="flex items-center gap-2"><i class="fab fa-android text-2xl text-green-500"></i><span class="font-medium">Android</span></div>
+                        <div class="flex items-center gap-2"><i class="fas fa-cube text-2xl text-blue-500"></i><span class="font-medium">Kotlin</span></div>
+                        <div class="flex items-center gap-2"><i class="fas fa-layer-group text-2xl text-green-400"></i><span class="font-medium">Jetpack Compose</span></div>
+                        <div class="flex items-center gap-2"><i class="fas fa-project-diagram text-2xl text-indigo-400"></i><span class="font-medium">MVVM / MVI</span></div>
+                        <div class="flex items-center gap-2"><i class="fas fa-random text-2xl text-purple-400"></i><span class="font-medium">Coroutines</span></div>
+                        <div class="flex items-center gap-2"><i class="fas fa-video text-2xl text-slate-400"></i><span class="font-medium">ExoPlayer</span></div>
+                        <div class="flex items-center gap-2"><i class="fas fa-camera text-2xl text-emerald-400"></i><span class="font-medium">CameraX</span></div>
+                        <div class="flex items-center gap-2"><i class="fas fa-code-branch text-2xl text-pink-400"></i><span class="font-medium">KMP</span></div>
+                        <div class="flex items-center gap-2"><i class="fab fa-apple text-2xl text-slate-500"></i><span class="font-medium">SwiftUI</span></div>
+                        <div class="flex items-center gap-2"><i class="fab fa-node-js text-2xl text-green-600"></i><span class="font-medium">Node.js</span></div>
+                        <div class="flex items-center gap-2"><i class="fas fa-plug text-2xl text-teal-400"></i><span class="font-medium">Ktor</span></div>
+                        <div class="flex items-center gap-2"><i class="fas fa-exchange-alt text-2xl text-blue-400"></i><span class="font-medium">REST APIs</span></div>
+                        <div class="flex items-center gap-2"><i class="fas fa-database text-2xl text-indigo-500"></i><span class="font-medium">PostgreSQL</span></div>
+                        <div class="flex items-center gap-2"><i class="fas fa-fire text-2xl text-orange-500"></i><span class="font-medium">Firebase</span></div>
+                        <div class="flex items-center gap-2"><i class="fab fa-aws text-2xl text-orange-400"></i><span class="font-medium">AWS</span></div>
+                        <div class="flex items-center gap-2"><i class="fas fa-tools text-2xl text-slate-500"></i><span class="font-medium">CI / CD</span></div>
+                        <div class="flex items-center gap-2"><i class="fab fa-github text-2xl text-slate-600"></i><span class="font-medium">GitHub</span></div>
+                        <div class="flex items-center gap-2"><i class="fas fa-cogs text-2xl text-slate-400"></i><span class="font-medium">Gradle</span></div>
+                        <div class="flex items-center gap-2"><i class="fas fa-laptop-code text-2xl text-blue-500"></i><span class="font-medium">Android Studio</span></div>
+
+                    </div>
+                </div>
             </div>
         </div>
+
     </div>
 </section>
 <section class="py-20 bg-white dark:bg-slate-900/50" id="projects">
@@ -144,8 +290,11 @@
                 A collection of impactful applications and open-source contributions. Ranging from utility tools to full-fledged entertainment platforms.
             </p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <article class="bg-card-light dark:bg-card-dark rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full group">
+
+
+        <div class=" md:grid-cols-2 lg:grid-cols-3 gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory -mx-4 px-4 md:mx-0 md:px-0 scrollbar-hide scroll-pl-4 scroll-pr-4">
+
+            <article class=" snap-start min-w-[85%] sm:min-w-[70%] md:min-w-0 bg-card-light dark:bg-card-dark rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full group ">
                 <div class="h-48 bg-slate-100 dark:bg-slate-800 relative overflow-hidden">
                     <div class="absolute inset-0 bg-gradient-to-tr from-green-100 to-blue-100 dark:from-slate-800 dark:to-slate-700 flex items-center justify-center">
                         <i class="fas fa-tv text-6xl text-slate-300 dark:text-slate-600 group-hover:scale-110 transition-transform duration-500"></i>
@@ -172,7 +321,7 @@
                     </div>
                 </div>
             </article>
-            <article class="bg-card-light dark:bg-card-dark rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full group">
+            <article class=" snap-start min-w-[85%] sm:min-w-[70%] md:min-w-0 bg-card-light dark:bg-card-dark rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full group ">
                 <div class="h-48 bg-slate-100 dark:bg-slate-800 relative overflow-hidden">
                     <div class="absolute inset-0 bg-gradient-to-tr from-red-100 to-orange-100 dark:from-slate-800 dark:to-slate-700 flex items-center justify-center">
                         <i class="fas fa-file-pdf text-6xl text-slate-300 dark:text-slate-600 group-hover:scale-110 transition-transform duration-500"></i>
@@ -196,7 +345,7 @@
                     </div>
                 </div>
             </article>
-            <article class="bg-card-light dark:bg-card-dark rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full group">
+            <article class=" snap-start min-w-[85%] sm:min-w-[70%] md:min-w-0 bg-card-light dark:bg-card-dark rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full group ">
                 <div class="h-48 bg-slate-100 dark:bg-slate-800 relative overflow-hidden">
                     <div class="absolute inset-0 bg-gradient-to-tr from-indigo-100 to-purple-100 dark:from-slate-800 dark:to-slate-700 flex items-center justify-center">
                         <i class="fas fa-users text-6xl text-slate-300 dark:text-slate-600 group-hover:scale-110 transition-transform duration-500"></i>
@@ -223,7 +372,7 @@
                     </div>
                 </div>
             </article>
-            <article class="bg-card-light dark:bg-card-dark rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full group">
+            <article class=" snap-start min-w-[85%] sm:min-w-[70%] md:min-w-0 bg-card-light dark:bg-card-dark rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full group ">
                 <div class="h-48 bg-slate-100 dark:bg-slate-800 relative overflow-hidden">
                     <div class="absolute inset-0 bg-gradient-to-tr from-yellow-100 to-amber-100 dark:from-slate-800 dark:to-slate-700 flex items-center justify-center">
                         <i class="fas fa-book-open text-6xl text-slate-300 dark:text-slate-600 group-hover:scale-110 transition-transform duration-500"></i>
@@ -249,7 +398,7 @@
                     </div>
                 </div>
             </article>
-            <article class="bg-card-light dark:bg-card-dark rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full group">
+            <article class=" snap-start min-w-[85%] sm:min-w-[70%] md:min-w-0 bg-card-light dark:bg-card-dark rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full group ">
                 <div class="h-48 bg-slate-100 dark:bg-slate-800 relative overflow-hidden">
                     <div class="absolute inset-0 bg-gradient-to-tr from-pink-100 to-rose-100 dark:from-slate-800 dark:to-slate-700 flex items-center justify-center">
                         <i class="fas fa-chart-pie text-6xl text-slate-300 dark:text-slate-600 group-hover:scale-110 transition-transform duration-500"></i>
@@ -272,7 +421,7 @@
                     </div>
                 </div>
             </article>
-            <article class="bg-card-light dark:bg-card-dark rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full group">
+            <article class=" snap-start min-w-[85%] sm:min-w-[70%] md:min-w-0 bg-card-light dark:bg-card-dark rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full group ">
                 <div class="h-48 bg-slate-100 dark:bg-slate-800 relative overflow-hidden">
                     <div class="absolute inset-0 bg-gradient-to-tr from-cyan-100 to-sky-100 dark:from-slate-800 dark:to-slate-700 flex items-center justify-center">
                         <i class="fas fa-microchip text-6xl text-slate-300 dark:text-slate-600 group-hover:scale-110 transition-transform duration-500"></i>
