@@ -825,7 +825,7 @@
                 {label: "Wordpress", tone: "blue"},
             ],
             ctas: [
-                {type: "play", label: "Play Store", href: "https://play.google.com/store/apps/details?id=work.curioustools.varabhaya"}
+                {type: "play", label: "Play Store", href: "https://play.google.com/store/apps/details?id=io.github.curioustools.varabhaya"}
             ]
         },
         {
@@ -977,30 +977,17 @@
 
         /*=====================MISC/EXPERIMENTAL=====================*/
         {
-            id: "android-experiments",
+            id: "Experiments",
             category: "misc",
             title: "Android Experiments",
             year: 2019,
             hero: {type: "icon", gradient: "indigo", icon: "fa-flask"},
-            description: "Collection of Android architecture samples including Room, LiveData, Paging, and Navigation.",
-            tags: [{label: "Samples", tone: "neutral"}, {label: "Jetpack", tone: "green"}],
-            ctas: [{type: "github", label: "Code", href: "https://github.com/root-ansh/AndroidExperiments"}
+            description: "Collection of My Experiments with various tech : backend, AI, Web scrapping data anlysis, Android, Web etc",
+            tags: [{label: "Samples", tone: "neutral"},],
+            ctas: [{type: "demo", label: "More info", href: "https://root-ansh.github.io/notes/tab_projects/project_summary/#2-other-mini-projectsandroid"}
             ]
         },
-        {
-            id: "2048",
-            category: "misc",
-            title: "2048 Game",
-            year: 2018,
-            hero: {
-                type: "icon",
-                gradient: "indigo",
-                icon: "fa-gamepad"
-            },
-            description: "Minimal Android implementation of the classic 2048 puzzle game.",
-            tags: [{label: "Game", tone: "purple"}, {label: "Android", tone: "neutral"}],
-            ctas: [{type: "github", label: "Code", href: "https://github.com/root-ansh/2048-minimal-demo"}]
-        }
+
     ];
 </script>
 
@@ -1064,7 +1051,7 @@
     <div class="flex justify-between items-center pt-4
       border-t border-slate-100 dark:border-slate-700">
       ${p.ctas.map(c => `
-        <a href="${c.href}"
+        <a target="_blank" href="${c.href}"
           class="text-slate-600 dark:text-slate-400
           hover:text-primary dark:hover:text-primary
           transition-colors text-sm font-medium flex items-center gap-1">
