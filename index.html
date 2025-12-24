@@ -131,6 +131,66 @@
     .group:hover .marquee-track {
         animation-play-state: paused;
     }
+
+    .project-tab {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+
+        padding: 0.55rem 1.1rem;
+        border-radius: 0.6rem;
+
+        font-size: 0.875rem;
+        font-weight: 600;
+
+        color: #475569; /* slate-600 */
+        background: transparent;
+
+        transition:
+                background-color 0.2s ease,
+                color 0.2s ease,
+                box-shadow 0.2s ease,
+                transform 0.15s ease;
+    }
+
+    /* Hover ONLY for unselected */
+    .project-tab:not(.active-tab):hover {
+        background: rgba(22, 101, 52, 0.08); /* primary / 8% */
+        color: #166534; /* primary */
+    }
+
+    /* Active (light) */
+    .active-tab {
+        background: #166534; /* dark green */
+        color: #ffffff;
+        box-shadow: 0 6px 18px rgba(22, 101, 52, 0.25);
+        cursor: default;
+    }
+
+    /* Dark base */
+    .dark .project-tab {
+        color: #cbd5e1; /* slate-300 */
+    }
+
+    /* Dark hover ONLY if not active */
+    .dark .project-tab:not(.active-tab):hover {
+        background: rgba(34, 197, 94, 0.15);
+        color: #22c55e;
+    }
+
+    /* Active (dark) */
+    .dark .active-tab {
+        background: #22c55e; /* bright green */
+        color: #022c22;
+        box-shadow: 0 6px 18px rgba(34, 197, 94, 0.35);
+    }
+
+    /* Prevent press animation on active */
+    .project-tab.active-tab:active {
+        transform: none;
+    }
+
+
     </style>
 </head>
 <script type="application/ld+json">
@@ -154,7 +214,6 @@
         });
     }
 </script>
-
 <body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-body transition-colors duration-300 antialiased selection:bg-primary selection:text-white">
 <nav class="fixed top-0 left-0 w-full backdrop-blur-md bg-white/70 dark:bg-background-dark/70 border-b border-slate-200 dark:border-slate-800 z-40">
     <div class="max-w-7xl 2xl:max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -400,180 +459,57 @@
 </section>
 <section class="py-20 bg-white dark:bg-slate-900/50" id="projects">
     <div class="max-w-7xl 2xl:max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-display font-bold text-slate-900 dark:text-white mb-4">Featured Projects</h2>
+
+        <!-- Header -->
+        <div class="text-center mb-10">
+            <h2 class="text-3xl md:text-4xl font-display font-bold text-slate-900 dark:text-white mb-3">
+                My Work
+            </h2>
             <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-                A collection of impactful applications and open-source contributions. Ranging from utility tools to full-fledged entertainment platforms.
+                Apps, web products, and experiments I’ve built across platforms.
             </p>
         </div>
-        <div class="flex md:grid     md:grid-cols-2 lg:grid-cols-3     gap-6     overflow-x-auto md:overflow-visible     snap-x snap-mandatory     -mx-4 px-4     md:mx-0 md:px-0     scrollbar-hide ">
-            <article class=" snap-start min-w-[85%] sm:min-w-[70%] md:min-w-0 bg-card-light dark:bg-card-dark rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full group ">
-                <div class="h-48 bg-slate-100 dark:bg-slate-800 relative overflow-hidden">
-                    <img
-                            src="https://opengraph.githubassets.com/120273925825d1883fe768b9d2b0b951da4633e5b7a018aa314508f74a266423/root-ansh/android_tvstore"
-                            alt="TV Store preview"
-                            class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div class="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">2025</div>
-                </div>
-                <div class="flex justify-between items-center pt-4 border-t border-slate-100 dark:border-slate-700"></div>
 
-                <div class="p-6 flex-1 flex flex-col">
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">TV Store</h3>
-                    <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 flex-1">
-                        A full-fledged Android TV app built using Kotlin, Jetpack Compose, MVI architecture, and ExoPlayer for seamless media streaming.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-xs rounded-md font-medium">Compose</span>
-                        <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs rounded-md font-medium">Kotlin</span>
-                        <span class="px-2 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 text-xs rounded-md font-medium">MVI</span>
-                    </div>
-                    <div class="flex justify-between items-center pt-4 border-t border-slate-100 dark:border-slate-700">
-                        <a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium flex items-center gap-1" href="#">
-                            <i class="fab fa-github"></i> Code
-                        </a>
-                        <a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium flex items-center gap-1" href="#">
-                            <i class="fas fa-play"></i> Live Demo
-                        </a>
-                    </div>
-                </div>
-            </article>
-            <article class=" snap-start min-w-[85%] sm:min-w-[70%] md:min-w-0 bg-card-light dark:bg-card-dark rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full group ">
-                <div class="h-48 bg-slate-100 dark:bg-slate-800 relative overflow-hidden">
-                    <img
-                            src="https://opengraph.githubassets.com/120273925825d1883fe768b9d2b0b951da4633e5b7a018aa314508f74a266423/root-ansh/android_tvstore"
-                            alt="TV Store preview"
-                            class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div class="absolute top-2 left-2 bg-yellow-500 text-white text-xs font-bold px-2 py-1 rounded shadow">50k+ Downloads</div>
-                    <div class="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">2024</div>
-                </div>
-                <div class="flex justify-between items-center pt-4 border-t border-slate-100 dark:border-slate-700"></div>
+        <!-- Switcher -->
+        <div class="flex justify-center mb-12">
+            <div
+                    class="inline-flex rounded-xl p-1
+           bg-slate-100 dark:bg-slate-800
+           border border-slate-200 dark:border-slate-700">
 
-                <div class="p-6 flex-1 flex flex-col">
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">PDF Widget</h3>
-                    <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 flex-1">
-                        A highly popular utility app converting any PDF into a homescreen widget. Surpassed 50,000+ downloads on the Play Store.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="px-2 py-1 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs rounded-md font-medium">Android</span>
-                        <span class="px-2 py-1 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs rounded-md font-medium">Widget</span>
-                    </div>
-                    <div class="flex justify-between items-center pt-4 border-t border-slate-100 dark:border-slate-700">
-                        <a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium flex items-center gap-1" href="#">
-                            <i class="fab fa-google-play"></i> Play Store
-                        </a>
-                    </div>
-                </div>
-            </article>
-            <article class=" snap-start min-w-[85%] sm:min-w-[70%] md:min-w-0 bg-card-light dark:bg-card-dark rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full group ">
-                <div class="h-48 bg-slate-100 dark:bg-slate-800 relative overflow-hidden">
-                    <div class="absolute inset-0 bg-gradient-to-tr from-indigo-100 to-purple-100 dark:from-slate-800 dark:to-slate-700 flex items-center justify-center">
-                        <i class="fas fa-users text-6xl text-slate-300 dark:text-slate-600 group-hover:scale-110 transition-transform duration-500"></i>
-                    </div>
-                    <div class="absolute top-2 left-2 bg-primary text-white text-xs font-bold px-2 py-1 rounded shadow">10k+ Users</div>
-                    <div class="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">2021</div>
-                </div>
-                <div class="p-6 flex-1 flex flex-col">
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Varabhaya Mobile</h3>
-                    <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 flex-1">
-                        Community app for an NGO enabling 10,000+ users to stream content and receive updates. Built with MVVM, Room DB, and Firebase.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="px-2 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 text-xs rounded-md font-medium">Firebase</span>
-                        <span class="px-2 py-1 bg-teal-100 dark:bg-teal-900/30 text-teal-700 dark:text-teal-300 text-xs rounded-md font-medium">MVVM</span>
-                    </div>
-                    <div class="flex justify-between items-center pt-4 border-t border-slate-100 dark:border-slate-700">
-                        <a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium flex items-center gap-1" href="#">
-                            <i class="fab fa-github"></i> Code
-                        </a>
-                        <a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium flex items-center gap-1" href="#">
-                            <i class="fab fa-google-play"></i> Play Store
-                        </a>
-                    </div>
-                </div>
-            </article>
-            <article class=" snap-start min-w-[85%] sm:min-w-[70%] md:min-w-0 bg-card-light dark:bg-card-dark rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full group ">
-                <div class="h-48 bg-slate-100 dark:bg-slate-800 relative overflow-hidden">
-                    <div class="absolute inset-0 bg-gradient-to-tr from-yellow-100 to-amber-100 dark:from-slate-800 dark:to-slate-700 flex items-center justify-center">
-                        <i class="fas fa-book-open text-6xl text-slate-300 dark:text-slate-600 group-hover:scale-110 transition-transform duration-500"></i>
-                    </div>
-                    <div class="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">2023</div>
-                </div>
-                <div class="p-6 flex-1 flex flex-col">
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Joey's Book Shop</h3>
-                    <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 flex-1">
-                        A full stack E-commerce app with native Android app as frontend and Node.js backend. Demonstrating complete system architecture.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="px-2 py-1 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300 text-xs rounded-md font-medium">Full Stack</span>
-                        <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs rounded-md font-medium">Node.js</span>
-                    </div>
-                    <div class="flex justify-between items-center pt-4 border-t border-slate-100 dark:border-slate-700">
-                        <a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium flex items-center gap-1" href="#">
-                            <i class="fab fa-github"></i> Frontend
-                        </a>
-                        <a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium flex items-center gap-1" href="#">
-                            <i class="fab fa-github"></i> Backend
-                        </a>
-                    </div>
-                </div>
-            </article>
-            <article class=" snap-start min-w-[85%] sm:min-w-[70%] md:min-w-0 bg-card-light dark:bg-card-dark rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full group ">
-                <div class="h-48 bg-slate-100 dark:bg-slate-800 relative overflow-hidden">
-                    <div class="absolute inset-0 bg-gradient-to-tr from-pink-100 to-rose-100 dark:from-slate-800 dark:to-slate-700 flex items-center justify-center">
-                        <i class="fas fa-chart-pie text-6xl text-slate-300 dark:text-slate-600 group-hover:scale-110 transition-transform duration-500"></i>
-                    </div>
-                    <div class="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">2025</div>
-                </div>
-                <div class="p-6 flex-1 flex flex-col">
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Expense Tracker</h3>
-                    <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 flex-1">
-                        Jetpack Compose App for storing user expenses and generating visual graph statistics for better financial management.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="px-2 py-1 bg-rose-100 dark:bg-rose-900/30 text-rose-700 dark:text-rose-300 text-xs rounded-md font-medium">Graphs</span>
-                        <span class="px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-xs rounded-md font-medium">Compose</span>
-                    </div>
-                    <div class="flex justify-between items-center pt-4 border-t border-slate-100 dark:border-slate-700">
-                        <a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium flex items-center gap-1" href="#">
-                            <i class="fab fa-github"></i> Code
-                        </a>
-                    </div>
-                </div>
-            </article>
-            <article class=" snap-start min-w-[85%] sm:min-w-[70%] md:min-w-0 bg-card-light dark:bg-card-dark rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full group ">
-                <div class="h-48 bg-slate-100 dark:bg-slate-800 relative overflow-hidden">
-                    <div class="absolute inset-0 bg-gradient-to-tr from-cyan-100 to-sky-100 dark:from-slate-800 dark:to-slate-700 flex items-center justify-center">
-                        <i class="fas fa-microchip text-6xl text-slate-300 dark:text-slate-600 group-hover:scale-110 transition-transform duration-500"></i>
-                    </div>
-                    <div class="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">2024</div>
-                </div>
-                <div class="p-6 flex-1 flex flex-col">
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Size Utils</h3>
-                    <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 flex-1">
-                        Lightweight Kotlin JVM library for efficient file and memory management. Designed for developers to optimize their apps.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="px-2 py-1 bg-sky-100 dark:bg-sky-900/30 text-sky-700 dark:text-sky-300 text-xs rounded-md font-medium">Library</span>
-                        <span class="px-2 py-1 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs rounded-md font-medium">JVM</span>
-                    </div>
-                    <div class="flex justify-between items-center pt-4 border-t border-slate-100 dark:border-slate-700">
-                        <a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium flex items-center gap-1" href="#">
-                            <i class="fab fa-github"></i> Code
-                        </a>
-                    </div>
-                </div>
-            </article>
+                <button data-filter="android" class="project-tab active-tab">
+                    <i class="fab fa-android mr-2"></i> Android
+                </button>
+
+                <button data-filter="web" class="project-tab">
+                    <i class="fas fa-globe mr-2"></i> Web
+                </button>
+
+                <button data-filter="misc" class="project-tab">
+                    <i class="fas fa-cube mr-2"></i> Misc
+                </button>
+
+            </div>
         </div>
+
+
+        <!-- Carousel -->
+        <div
+                id="projects-container"
+                class="flex md:grid md:grid-cols-2 lg:grid-cols-3
+             gap-6 overflow-x-auto md:overflow-visible
+             snap-x snap-mandatory -mx-4 px-4 md:mx-0 md:px-0 scrollbar-hide">
+            <!-- Cards injected here -->
+        </div>
+
         <div class="mt-12 text-center">
-            <a class="inline-flex items-center gap-2 text-primary font-semibold hover:underline" href="https://github.com">
+            <a href="https://github.com/root-ansh"
+               class="inline-flex items-center gap-2 text-primary font-semibold hover:underline">
                 View complete portfolio on GitHub <i class="fas fa-arrow-right text-sm"></i>
             </a>
         </div>
     </div>
 </section>
-
 <section class="py-20 bg-background-light dark:bg-background-dark relative" id="experience">
     <div class="absolute left-0 top-1/2 -translate-y-1/2 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
     <div class="max-w-7xl 2xl:max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -788,6 +724,7 @@
 <!--        </div>-->
     </div>
 </section>
+
 <footer class="bg-white dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 py-12">
     <div class="max-w-7xl 2xl:max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
         <div class="text-center md:text-left">
@@ -828,6 +765,408 @@
             localStorage.setItem('color-theme', 'dark');
         }
     });
+</script>
+<script>
+    const TAG_STYLES = {
+        green: "bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300",
+        blue: "bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300",
+        purple: "bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300",
+        orange: "bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300",
+        teal: "bg-teal-100 dark:bg-teal-900/30 text-teal-700 dark:text-teal-300",
+        neutral: "bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300"
+    };
+
+    const CTA_ICONS = {
+        github: "fab fa-github",
+        play: "fab fa-google-play",
+        demo: "fas fa-play"
+    };
+
+    const HERO_GRADIENTS = {
+        indigo: "from-indigo-100 to-purple-100 dark:from-slate-800 dark:to-slate-700"
+    };
+</script>
+<script>
+    const PROJECTS = [
+
+        /* ===================== ANDROID – FLAGSHIP ===================== */
+
+        {
+            id: "pdf-widget",
+            category: "android",
+            title: "PDF Widget",
+            year: 2024,
+
+            hero: {
+                type: "image",
+                src: "https://opengraph.githubassets.com/1/root-ansh/pdf-widget"
+            },
+
+            badges: [
+                { label: "50k+ Downloads", tone: "yellow" }
+            ],
+
+            description:
+                "A highly popular Android utility app that converts any PDF into a homescreen widget. Widely adopted and actively maintained.",
+
+            tags: [
+                { label: "Android", tone: "neutral" },
+                { label: "Widget", tone: "neutral" },
+                { label: "Utility", tone: "blue" }
+            ],
+
+            ctas: [
+                {
+                    type: "play",
+                    label: "Play Store",
+                    href: "https://play.google.com/store/apps/details?id=work.curioustools.pdfwidget"
+                }
+            ]
+        },
+
+        {
+            id: "varabhaya",
+            category: "android",
+            title: "Varabhaya Mobile",
+            year: 2021,
+
+            hero: {
+                type: "icon",
+                gradient: "indigo",
+                icon: "fa-users"
+            },
+
+            badges: [
+                { label: "10k+ Users", tone: "green" }
+            ],
+
+            description:
+                "Community-focused Android app for an NGO enabling 10,000+ users to receive updates and stream content.",
+
+            tags: [
+                { label: "Firebase", tone: "orange" },
+                { label: "MVVM", tone: "teal" },
+                { label: "AWS", tone: "purple" }
+            ],
+
+            ctas: [
+                {
+                    type: "play",
+                    label: "Play Store",
+                    href: "https://play.google.com/store/apps/details?id=work.curioustools.varabhaya"
+                }
+            ]
+        },
+
+        {
+            id: "water-manager",
+            category: "android",
+            title: "Water Manager",
+            year: 2022,
+
+            hero: {
+                type: "image",
+                src: "https://opengraph.githubassets.com/1/root-ansh/prod_WaterManager"
+            },
+
+            description:
+                "A full-fledged water intake tracker and reminder app built using modern Jetpack components.",
+
+            tags: [
+                { label: "Jetpack", tone: "green" },
+                { label: "MVVM", tone: "teal" },
+                { label: "Health", tone: "blue" }
+            ],
+
+            ctas: [
+                {
+                    type: "github",
+                    label: "Code",
+                    href: "https://github.com/root-ansh/prod_WaterManager"
+                }
+            ]
+        },
+
+        {
+            id: "menu-maker",
+            category: "android",
+            title: "Menu Maker",
+            year: 2020,
+
+            hero: {
+                type: "image",
+                src: "https://raw.githubusercontent.com/root-ansh/Menu-Maker_v1/master/screenshots_and_apk/sc2.png"
+            },
+
+            description:
+                "Restaurant-focused Android app for managing menus and instantly generating PDFs.",
+
+            tags: [
+                { label: "PDF", tone: "purple" },
+                { label: "Android", tone: "neutral" },
+                { label: "Business", tone: "orange" }
+            ],
+
+            ctas: [
+                {
+                    type: "play",
+                    label: "Play Store",
+                    href: "https://play.google.com/store/apps/details?id=in.curioustools.menu_maker"
+                },
+                {
+                    type: "github",
+                    label: "Code",
+                    href: "https://github.com/root-ansh/Menu-Maker_v1"
+                }
+            ]
+        },
+
+        {
+            id: "self-notes",
+            category: "android",
+            title: "Self Notes",
+            year: 2019,
+
+            hero: {
+                type: "image",
+                src: "https://raw.githubusercontent.com/root-ansh/ShortNotes/master/screenshots/notes1.png"
+            },
+
+            description:
+                "Minimal note-taking app with pinned notifications using MVVM and Architecture Components.",
+
+            tags: [
+                { label: "MVVM", tone: "teal" },
+                { label: "Notes", tone: "blue" }
+            ],
+
+            ctas: [
+                {
+                    type: "play",
+                    label: "Play Store",
+                    href: "https://play.google.com/store/apps/details?id=in.curioustools.selfnotes"
+                }
+            ]
+        },
+
+        /* ===================== WEB ===================== */
+
+        {
+            id: "menu-maker-web",
+            category: "web",
+            title: "Menu Maker (Web)",
+            year: 2021,
+
+            hero: {
+                type: "icon",
+                gradient: "indigo",
+                icon: "fa-globe"
+            },
+
+            description:
+                "Web version of Menu Maker built to replicate Android functionality for broader accessibility.",
+
+            tags: [
+                { label: "Web", tone: "blue" },
+                { label: "Business", tone: "orange" }
+            ],
+
+            ctas: [
+                {
+                    type: "github",
+                    label: "Code",
+                    href: "https://github.com/root-ansh/menu-maker-web"
+                }
+            ]
+        },
+
+        {
+            id: "url-shortner",
+            category: "web",
+            title: "URL Shortener",
+            year: 2020,
+
+            hero: {
+                type: "icon",
+                gradient: "indigo",
+                icon: "fa-link"
+            },
+
+            description:
+                "Flask-based URL shortener with Bootstrap UI and hosted demo.",
+
+            tags: [
+                { label: "Flask", tone: "green" },
+                { label: "Python", tone: "purple" }
+            ],
+
+            ctas: [
+                {
+                    type: "github",
+                    label: "Code",
+                    href: "https://github.com/root-ansh/url-shortner"
+                }
+            ]
+        },
+
+        /* ===================== MISC / EXPERIMENTAL ===================== */
+
+        {
+            id: "android-experiments",
+            category: "misc",
+            title: "Android Experiments",
+            year: 2019,
+
+            hero: {
+                type: "icon",
+                gradient: "indigo",
+                icon: "fa-flask"
+            },
+
+            description:
+                "Collection of Android architecture samples including Room, LiveData, Paging, and Navigation.",
+
+            tags: [
+                { label: "Samples", tone: "neutral" },
+                { label: "Jetpack", tone: "green" }
+            ],
+
+            ctas: [
+                {
+                    type: "github",
+                    label: "Code",
+                    href: "https://github.com/root-ansh/AndroidExperiments"
+                }
+            ]
+        },
+
+        {
+            id: "2048",
+            category: "misc",
+            title: "2048 Game",
+            year: 2018,
+
+            hero: {
+                type: "icon",
+                gradient: "indigo",
+                icon: "fa-gamepad"
+            },
+
+            description:
+                "Minimal Android implementation of the classic 2048 puzzle game.",
+
+            tags: [
+                { label: "Game", tone: "purple" },
+                { label: "Android", tone: "neutral" }
+            ],
+
+            ctas: [
+                {
+                    type: "github",
+                    label: "Code",
+                    href: "https://github.com/root-ansh/2048-minimal-demo"
+                }
+            ]
+        }
+    ];
+</script>
+
+<script>
+    function renderProjectCard(p) {
+        return `
+<article class="snap-start min-w-[85%] sm:min-w-[70%] md:min-w-0
+  bg-card-light dark:bg-card-dark rounded-xl shadow-sm
+  border border-slate-200 dark:border-slate-700
+  overflow-hidden hover:shadow-xl hover:-translate-y-1
+  transition-all duration-300 flex flex-col h-full group">
+
+  <div class="h-48 relative overflow-hidden bg-slate-100 dark:bg-slate-800">
+
+    ${p.hero.type === "image" ? `
+      <img src="${p.hero.src}"
+        loading="lazy"
+        alt="${p.title}"
+        class="absolute inset-0 w-full h-full object-cover
+               group-hover:scale-105 transition-transform duration-500">
+    ` : `
+      <div class="absolute inset-0 bg-gradient-to-tr ${HERO_GRADIENTS[p.hero.gradient]}
+           flex items-center justify-center">
+        <i class="fas ${p.hero.icon} text-6xl text-slate-300 dark:text-slate-600
+           group-hover:scale-110 transition-transform duration-500"></i>
+      </div>
+    `}
+
+    ${p.badges?.map(b => `
+      <div class="absolute top-2 left-2
+        ${b.tone === "yellow"
+            ? "bg-yellow-500 text-white"
+            : "bg-primary text-white"}
+        text-xs font-bold px-2 py-1 rounded shadow">
+        ${b.label}
+      </div>
+    `).join("")}
+
+    <div class="absolute bottom-2 right-2 bg-black/70 text-white
+      text-xs px-2 py-1 rounded">${p.year}</div>
+  </div>
+
+  <div class="p-6 flex-1 flex flex-col">
+    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">
+      ${p.title}
+    </h3>
+
+    <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 flex-1">
+      ${p.description}
+    </p>
+
+    <div class="flex flex-wrap gap-2 mb-6">
+      ${p.tags.map(t => `
+        <span class="px-2 py-1 text-xs rounded-md font-medium
+          ${TAG_STYLES[t.tone]}">
+          ${t.label}
+        </span>
+      `).join("")}
+    </div>
+
+    <div class="flex justify-between items-center pt-4
+      border-t border-slate-100 dark:border-slate-700">
+      ${p.ctas.map(c => `
+        <a href="${c.href}"
+          class="text-slate-600 dark:text-slate-400
+          hover:text-primary dark:hover:text-primary
+          transition-colors text-sm font-medium flex items-center gap-1">
+          <i class="${CTA_ICONS[c.type]}"></i> ${c.label}
+        </a>
+      `).join("")}
+    </div>
+  </div>
+</article>
+`;
+    }
+</script>
+<script>
+    const container = document.getElementById("projects-container");
+    const tabs = document.querySelectorAll(".project-tab");
+
+    function renderProjects(category) {
+        const items = PROJECTS.filter(p => p.category === category);
+
+        container.innerHTML = `
+    <div class="snap-start shrink-0 w-4 md:hidden"></div>
+    ${items.map(renderProjectCard).join("")}
+    <div class="snap-start shrink-0 w-4 md:hidden"></div>
+  `;
+    }
+
+    tabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+            tabs.forEach(t => t.classList.remove("active-tab"));
+            tab.classList.add("active-tab");
+            renderProjects(tab.dataset.filter);
+        });
+    });
+
+    renderProjects("android");
 </script>
 
 </body></html>
