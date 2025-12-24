@@ -1,13 +1,13 @@
 const CACHE_NAME = "root-ansh-v1";
-const OFFLINE_URL = "/offline.html";
+const OFFLINE_URL = "meta/offline.html";
 
 const ASSETS = [
     "/",
     "/index.html",
-    "/offline.html",
-    "/manifest.webmanifest",
-    "/icons/icon-192.png",
-    "/icons/icon-512.png"
+    "meta/offline.html",
+    "meta/manifest.webmanifest",
+    "meta/icons/icon-192.png",
+    "meta/icons/icon-512.png"
 ];
 
 // Install
