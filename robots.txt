@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://root-ansh.github.io/sitemap.xml
