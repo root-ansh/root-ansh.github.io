@@ -783,108 +783,85 @@
     };
 
     const HERO_GRADIENTS = {
-        indigo: "from-indigo-100 to-purple-100 dark:from-slate-800 dark:to-slate-700"
+         indigo: "from-emerald-100 via-emerald-50 to-slate-100 dark:from-emerald-900/30 dark:via-slate-900 dark:to-slate-800",
     };
 </script>
 <script>
-    const PROJECTS = [
-
-        /* ===================== ANDROID – FLAGSHIP ===================== */
-
+    const PROJECTS=[
+        /*=====================ANDROID–FLAGSHIP=====================*/
         {
             id: "pdf-widget",
             category: "android",
             title: "PDF Widget",
             year: 2024,
-
-            hero: {
-                type: "image",
-                src: "https://opengraph.githubassets.com/1/root-ansh/pdf-widget"
-            },
-
+            description: "A highly popular Android utility app that converts any PDF into a homescreen widget. Widely adopted and actively maintained.",
+            hero: {type: "icon", gradient: "indigo", icon: "fa-globe"},
             badges: [
-                { label: "50k+ Downloads", tone: "yellow" }
+                {label: "10k+ Downloads", tone: "green"}
             ],
-
-            description:
-                "A highly popular Android utility app that converts any PDF into a homescreen widget. Widely adopted and actively maintained.",
-
             tags: [
-                { label: "Android", tone: "neutral" },
-                { label: "Widget", tone: "neutral" },
-                { label: "Utility", tone: "blue" }
+                {label: "Android", tone: "neutral"},
+                {label: "Widget", tone: "neutral"},
+                {label: "Utility", tone: "neutral"}
             ],
-
             ctas: [
-                {
-                    type: "play",
-                    label: "Play Store",
-                    href: "https://play.google.com/store/apps/details?id=work.curioustools.pdfwidget"
-                }
+                {type: "play", label: "Play Store", href: "https://play.google.com/store/apps/details?id=work.curioustools.pdfwidget"}
             ]
         },
-
         {
             id: "varabhaya",
             category: "android",
             title: "Varabhaya Mobile",
-            year: 2021,
-
-            hero: {
-                type: "icon",
-                gradient: "indigo",
-                icon: "fa-users"
-            },
-
+            year: "2021-25",
+            description: "Community-focused Android app for an NGO enabling 10,000+ users to receive updates and stream content.",
+            hero: {type: "image", src: "https://raw.githubusercontent.com/root-ansh/misc_test_server/refs/heads/master/varab_new_hero.png"},
             badges: [
-                { label: "10k+ Users", tone: "green" }
+                {label: "10k+ Downloads", tone: "green"}
             ],
-
-            description:
-                "Community-focused Android app for an NGO enabling 10,000+ users to receive updates and stream content.",
-
             tags: [
-                { label: "Firebase", tone: "orange" },
-                { label: "MVVM", tone: "teal" },
-                { label: "AWS", tone: "purple" }
+                {label: "Firebase", tone: "orange"},
+                {label: "Jetpack Compose", tone: "teal"},
+                {label: "AWS", tone: "purple"},
+                {label: "Wordpress", tone: "blue"},
             ],
-
             ctas: [
-                {
-                    type: "play",
-                    label: "Play Store",
-                    href: "https://play.google.com/store/apps/details?id=work.curioustools.varabhaya"
-                }
+                {type: "play", label: "Play Store", href: "https://play.google.com/store/apps/details?id=work.curioustools.varabhaya"}
             ]
         },
-
+        {
+            id: "self-notes",
+            category: "android",
+            title: "Self Notes",
+            year: 2019,
+            badges: [
+                {label: "10k+ Downloads", tone: "green"}
+            ],
+            hero: {type: "image", src: "https://root-ansh.github.io/notes/tab_projects/img/self_n_1.png"},
+            description: "Minimal note-taking app with pinned notifications using MVVM and Architecture Components.",
+            tags: [{label: "MVVM", tone: "teal"}, {label: "Notes", tone: "blue"}],
+            ctas: [{type: "play", label: "Play Store", href: "https://play.google.com/store/apps/details?id=in.curioustools.selfnotes"}]
+        },
         {
             id: "water-manager",
             category: "android",
             title: "Water Manager",
             year: 2022,
-
-            hero: {
-                type: "image",
-                src: "https://opengraph.githubassets.com/1/root-ansh/prod_WaterManager"
-            },
-
-            description:
-                "A full-fledged water intake tracker and reminder app built using modern Jetpack components.",
-
+            hero: {type: "image", src: "https://opengraph.githubassets.com/1/root-ansh/prod_WaterManager"},
+            description: "A full-fledged water intake tracker and reminder app built using modern Jetpack components.",
             tags: [
-                { label: "Jetpack", tone: "green" },
-                { label: "MVVM", tone: "teal" },
-                { label: "Health", tone: "blue" }
+                {label: "Jetpack", tone: "green"},
+                {label: "MVVM", tone: "teal"},
+                {label: "Health", tone: "blue"}
+            ],
+            ctas: [
+                {type: "github", label: "Github", href: "https://github.com/root-ansh/prod_WaterManager"},
+                {type: "play", label: "Play Store", href: "https://play.google.com/store/apps/details?id=in.curioustools.water_reminder&hl=en_IN"}
+
+            ],
+            badges: [
+                {label: "5k+ Downloads", tone: "green"}
             ],
 
-            ctas: [
-                {
-                    type: "github",
-                    label: "Code",
-                    href: "https://github.com/root-ansh/prod_WaterManager"
-                }
-            ]
         },
 
         {
@@ -893,180 +870,136 @@
             title: "Menu Maker",
             year: 2020,
 
-            hero: {
-                type: "image",
-                src: "https://raw.githubusercontent.com/root-ansh/Menu-Maker_v1/master/screenshots_and_apk/sc2.png"
-            },
-
-            description:
-                "Restaurant-focused Android app for managing menus and instantly generating PDFs.",
-
-            tags: [
-                { label: "PDF", tone: "purple" },
-                { label: "Android", tone: "neutral" },
-                { label: "Business", tone: "orange" }
+            badges: [
+                {label: "50k+ Downloads", tone: "yellow"}
             ],
-
-            ctas: [
-                {
-                    type: "play",
-                    label: "Play Store",
-                    href: "https://play.google.com/store/apps/details?id=in.curioustools.menu_maker"
-                },
-                {
-                    type: "github",
-                    label: "Code",
-                    href: "https://github.com/root-ansh/Menu-Maker_v1"
-                }
-            ]
+            hero: {type: "image", src: "https://raw.githubusercontent.com/root-ansh/misc_test_server/refs/heads/master/menu_maker.png"},
+            description: "Restaurant-focused Android app for managing menus and instantly generating PDFs.",
+            tags: [{label: "PDF", tone: "purple"}, {label: "Android", tone: "neutral"}, {label: "Business", tone: "orange"}],
+            ctas: [{type: "play", label: "Play Store", href: "https://play.google.com/store/apps/details?id=in.curioustools.menu_maker"}, {type: "github", label: "Code", href: "https://github.com/root-ansh/Menu-Maker_v1"}]
         },
-
         {
-            id: "self-notes",
+            id: "body-building",
             category: "android",
-            title: "Self Notes",
-            year: 2019,
-
-            hero: {
-                type: "image",
-                src: "https://raw.githubusercontent.com/root-ansh/ShortNotes/master/screenshots/notes1.png"
-            },
-
-            description:
-                "Minimal note-taking app with pinned notifications using MVVM and Architecture Components.",
-
-            tags: [
-                { label: "MVVM", tone: "teal" },
-                { label: "Notes", tone: "blue" }
-            ],
-
+            title: "Body Building Challange",
+            year: 2020,
+            hero: {type: "image", src: "https://opengraph.githubassets.com/1/root-ansh/android_bodybuilding_kotlin"},
+            description: "A guided workout Android app that automates exercise selection, manages multi-set timed routines with smart breaks, and syncs music playback to workout states",
+            tags: [{label: "MVVM", tone: "neutral"}, {label: "Android", tone: "neutral"}, {label: "Business", tone: "orange"}],
             ctas: [
-                {
-                    type: "play",
-                    label: "Play Store",
-                    href: "https://play.google.com/store/apps/details?id=in.curioustools.selfnotes"
-                }
+                {type: "github", label: "Github", href: "https://github.com/root-ansh/android_bodybuilding_kotlin"},
+                {type: "github", label: "Github (Java)", href: "https://github.com/root-ansh/android_bodybuilding"},
+
             ]
         },
 
-        /* ===================== WEB ===================== */
+
+        /*=====================WEB=====================*/
+        {
+            id: "jira",
+            category: "web",
+            title: "Jira Board",
+            year: 2021,
+            hero: {type: "image", src: "https://raw.githubusercontent.com/root-ansh/misc_test_server/refs/heads/master/jira.png"},
+            description: "a lightweight Jira-style project management web app that models real agile workflows—projects, boards, columns, and issues—with clear status transitions and task ownership.",
+            tags: [
+                {label: "Web", tone: "blue"},
+                {label: "vanilla", tone: "teal"}
+            ]
+            ,
+            ctas: [
+                {type: "github", label: "Code", href: "https://github.com/root-ansh/web_all_public_projects/tree/main/proj_jira2"},
+                {type: "demo", label: "Live Demo", href: "https://root-ansh.github.io/web_all_public_projects/proj_jira2/"},
+
+            ]
+        },
+        {
+            id: "movies",
+            category: "web",
+            title: "Trendy Hub",
+            year: 2021,
+            hero: {type: "image", src: "https://raw.githubusercontent.com/root-ansh/misc_test_server/refs/heads/master/movies.png"},
+            description: "MDb-style movie aggregator website that fetches movie details from APIs and lets users bookmark their favorite movies",
+            tags: [
+                {label: "Web", tone: "blue"},
+                {label: "vanilla", tone: "teal"},
+                {label: "react", tone: "orange"}
+
+            ]
+            ,
+            ctas: [
+                {type: "github", label: "Code (Vanilla)", href: "https://github.com/root-ansh/web_all_public_projects/tree/main/proj_movies_app"},
+                {type: "github", label: "Code (React)", href: "https://github.com/root-ansh/web_all_public_projects/tree/main/proj_movies_app_react"},
+                {type: "demo", label: "Live Demo", href: "https://trendy-hub.netlify.app/favourites"},//https://root-ansh.github.io/web_all_public_projects/
+
+            ]
+        },
+        {
+            id: "web-experiments",
+            category: "web",
+            title: "Web Experiments",
+            year: 2020,
+            hero: {type: "icon", gradient: "indigo", icon: "fa-flask"},
+            description: "A list of some small web experiments with vanilla html/css, react, python etc",
+            tags: [
+                {label: "web", tone: "neutral"},
+                {label: "vanilla", tone: "neutral"},
+                {label: "html", tone: "neutral"},
+                {label: "react", tone: "neutral"},
+                {label: "python", tone: "neutral"},
+            ],
+            ctas: [
+                {type: "demo", label: "Live Demo", href: "https://root-ansh.github.io/web_all_public_projects/"},
+                {type: "github", label: "Code", href: "https://github.com/root-ansh/web_all_public_projects"}
+            ]
+        },
 
         {
             id: "menu-maker-web",
             category: "web",
             title: "Menu Maker (Web)",
             year: 2021,
-
-            hero: {
-                type: "icon",
-                gradient: "indigo",
-                icon: "fa-globe"
-            },
-
-            description:
-                "Web version of Menu Maker built to replicate Android functionality for broader accessibility.",
-
-            tags: [
-                { label: "Web", tone: "blue" },
-                { label: "Business", tone: "orange" }
-            ],
-
-            ctas: [
-                {
-                    type: "github",
-                    label: "Code",
-                    href: "https://github.com/root-ansh/menu-maker-web"
-                }
-            ]
+            hero: {type: "icon", gradient: "indigo", icon: "fa-globe"},
+            description: "Web version of Menu Maker built to replicate Android functionality for broader accessibility.",
+            tags: [{label: "Web", tone: "blue"}, {label: "Business", tone: "orange"}],
+            ctas: [{type: "github", label: "Code", href: "https://github.com/root-ansh/menu-maker-web"}]
         },
-
         {
             id: "url-shortner",
             category: "web",
             title: "URL Shortener",
             year: 2020,
-
-            hero: {
-                type: "icon",
-                gradient: "indigo",
-                icon: "fa-link"
-            },
-
-            description:
-                "Flask-based URL shortener with Bootstrap UI and hosted demo.",
-
-            tags: [
-                { label: "Flask", tone: "green" },
-                { label: "Python", tone: "purple" }
-            ],
-
-            ctas: [
-                {
-                    type: "github",
-                    label: "Code",
-                    href: "https://github.com/root-ansh/url-shortner"
-                }
-            ]
+            hero: {type: "icon", gradient: "indigo", icon: "fa-link"},
+            description: "Flask-based URL shortener with Bootstrap UI and hosted demo.",
+            tags: [{label: "Flask", tone: "green"}, {label: "Python", tone: "purple"}],
+            ctas: [{type: "github", label: "Code", href: "https://github.com/root-ansh/url-shortner"}]
         },
 
-        /* ===================== MISC / EXPERIMENTAL ===================== */
-
+        /*=====================MISC/EXPERIMENTAL=====================*/
         {
             id: "android-experiments",
             category: "misc",
             title: "Android Experiments",
             year: 2019,
-
-            hero: {
-                type: "icon",
-                gradient: "indigo",
-                icon: "fa-flask"
-            },
-
-            description:
-                "Collection of Android architecture samples including Room, LiveData, Paging, and Navigation.",
-
-            tags: [
-                { label: "Samples", tone: "neutral" },
-                { label: "Jetpack", tone: "green" }
-            ],
-
-            ctas: [
-                {
-                    type: "github",
-                    label: "Code",
-                    href: "https://github.com/root-ansh/AndroidExperiments"
-                }
+            hero: {type: "icon", gradient: "indigo", icon: "fa-flask"},
+            description: "Collection of Android architecture samples including Room, LiveData, Paging, and Navigation.",
+            tags: [{label: "Samples", tone: "neutral"}, {label: "Jetpack", tone: "green"}],
+            ctas: [{type: "github", label: "Code", href: "https://github.com/root-ansh/AndroidExperiments"}
             ]
         },
-
         {
             id: "2048",
             category: "misc",
             title: "2048 Game",
             year: 2018,
-
             hero: {
                 type: "icon",
                 gradient: "indigo",
                 icon: "fa-gamepad"
             },
-
-            description:
-                "Minimal Android implementation of the classic 2048 puzzle game.",
-
-            tags: [
-                { label: "Game", tone: "purple" },
-                { label: "Android", tone: "neutral" }
-            ],
-
-            ctas: [
-                {
-                    type: "github",
-                    label: "Code",
-                    href: "https://github.com/root-ansh/2048-minimal-demo"
-                }
-            ]
+            description: "Minimal Android implementation of the classic 2048 puzzle game.",
+            tags: [{label: "Game", tone: "purple"}, {label: "Android", tone: "neutral"}],
+            ctas: [{type: "github", label: "Code", href: "https://github.com/root-ansh/2048-minimal-demo"}]
         }
     ];
 </script>
